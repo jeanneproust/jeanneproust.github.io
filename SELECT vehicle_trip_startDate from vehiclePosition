@@ -1,0 +1,12 @@
+SELECT vehicle_trip_startDate from vehiclePositions_entity WHERE vehicle_trip_routeId = 11657 AND vehicle_stopId = 8659 AND vehicle_timestamp BETWEEN 1609477200 AND 1617249600;
+
+
+SELECT table_name AS "Table",
+ROUND(((data_length + index_length) / 1024 / 1024), 2) AS "Size (MB)"
+FROM information_schema.TABLES
+WHERE table_schema = "cmta_test"
+ORDER BY (data_length + index_length) DESC;
+
+EXPLAIN SELECT vehicle_trip_startDate from vehiclePositions_entity WHERE header_timestamp BETWEEN 1614574800 AND 1617249600 AND vehicle_trip_routeId = 11657 AND vehicle_stopId = 8659;
+
+SELECT vehicle_timestamp FROM vehiclePositions_entity WHERE header_timestamp > 1619741275;
